@@ -1,0 +1,134 @@
+
+.service-area-menu ul li {
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.service-area-menu ul {
+    justify-content: space-around;
+}
+
+.service-area-menu li a {
+    text-align: center;
+    padding: 12px 81px;
+    color: #fff;
+    border-right: 1px solid #eee;
+}
+.service-area-menu li:last-child a {
+    border-right: none;
+}
+.service-area-menu li a.active,
+.service-area-menu li a:hover {
+    background: #4e7b72;
+    color: #fff;
+}
+
+.service-area-menu ul {
+    margin-top: 50px;
+    background: #649e93;
+}
+
+.ceromony-content2 {
+    padding-left: 30px;
+}
+
+.Ceremony-wrap {
+    margin-top: 30px;
+    background: #f5fbfb;
+}
+
+#people .Ceremony-wrap {
+    background: none;
+}
+#people .Ceremony-wrap{
+    margin-top: 0;
+}
+.service-area2 .Ceremony-wrap {
+    background: #f5fbfb;
+}
+.ceromony-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.ceromony-content h3 {
+    font-size: 30px;
+    color: #649e93;
+    margin-bottom: 16px;
+}
+
+.ceromony-content .location-btn {
+    color: #649e93;
+    font-weight: 600;
+    display: inline-block;
+    max-width: 130px;
+    padding: 0;
+    text-align: left;
+    background: none;
+}
+.ceromony-content .btn.location-btn:hover {
+    background: none!important;
+    color: #649e93;
+}
+.ceromony-content .location-btn:focus {
+    box-shadow: none;
+}
+
+.ceromony-content span {
+    display: block;
+}
+
+.ceromony-content p {
+    padding: 20px 0;
+    padding-right: 20px;
+}
+
+
+
+.MuiDialog-paperWidthSm {
+    max-width: 900px !important;
+}
+
+.quickview-dialog {
+    z-index: 999999 !important;
+}
+
+.modal-body iframe {
+    width: 800px;
+    height: 500px;
+}
+
+@media (max-width: 991px) {
+    .modal-body iframe {
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-body iframe {
+        width: 100%;
+    }
+}
+
+.MuiDialogTitle-root {
+    padding-bottom: 0 !important;
+}
+
+.MuiIconButton-label i {
+    font-size: 18px;
+}
+
+.event-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 11;
+    background: #fff;
+    border: 2px solid #1e7b67;
+}
