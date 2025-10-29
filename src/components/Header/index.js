@@ -29,18 +29,18 @@ const Header = () => {
                                             <li><Link to='/home4'>Home Style 4</Link></li>
                                         </ul>
                                     </li> */}
-                                    <li><AnchorLink href='#couple'>Couple</AnchorLink></li>
-                                    <li><AnchorLink href='#story'>Story</AnchorLink></li>
-                                    <li><AnchorLink href='#people'>People</AnchorLink></li>
-                                    <li><AnchorLink href='#event'>Events</AnchorLink></li>
-                                    <li><AnchorLink href='#gallery'>Gallery</AnchorLink></li>
-                                    <li><AnchorLink href='#rsvp'>Rsvp</AnchorLink></li>
-                                    <li><Link to='#'>Blog +</Link>
+                                    <li><AnchorLink href='#couple'>Pareja</AnchorLink></li>
+                                    <li><AnchorLink href='#story'>Historia</AnchorLink></li>
+                                    {/* <li><AnchorLink href='#people'>People</AnchorLink></li> */}
+                                    <li><AnchorLink href='#event'>Evento</AnchorLink></li>
+                                    {/* <li><AnchorLink href='#gallery'>Gallery</AnchorLink></li> */}
+                                    <li><AnchorLink href='#rsvp'>Contacto</AnchorLink></li>
+                                    {/* <li><Link to='#'>Blog +</Link>
                                         <ul className="submenu submenu2">
                                             <li><Link to='/blog'>Blog</Link></li>
                                             <li><Link to='/Blog-details'>Blog Details</Link></li>
                                         </ul>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>

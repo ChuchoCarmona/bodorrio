@@ -11,13 +11,13 @@
 }
 
 .item1{
-    background: url(../../images/slider/1.jpg);
-    height: 950px;
-    display: flex!important;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
+  background: url(../../images/fotosPaginaBoda/portada.jpg) center center / cover no-repeat;
+  height: 650px;
+  display: flex!important;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
 .item2{

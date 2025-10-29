@@ -1,44 +1,139 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Boda de Jesús Carmona y Litzy Arcos | Sitio Oficial</title>
+
+    <!-- SEO básicas -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta name="theme-color" content="#8e5aa6" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="description" content="Acompáñanos a celebrar la boda de Jesús Carmona y Litzy Arcos. Toda la información del evento: fecha, ubicación, mesa de regalos, dress code, confirmación de asistencia (RSVP) y más." />
+    <meta name="keywords" content="boda, Jesús Carmona, Litzy Arcos, invitación, rsvp, mesa de regalos, evento, ceremonia, recepción" />
+    <meta name="author" content="Jesús Carmona y Litzy Arcos" />
+
+    <!-- Canonical (ajusta tu dominio de producción) -->
+    <link rel="canonical" href="https://tudominio.com/" />
+
+    <!-- Favicons (coloca tus archivos en /public) -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Lavelo - React Wedding Template</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Social / Open Graph -->
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Boda de Jesús Carmona y Litzy Arcos" />
+    <meta property="og:description" content="Toda la información para acompañarnos en nuestro gran día. ¡Confirma tu asistencia!" />
+    <meta property="og:url" content="https://tudominio.com/" />
+    <meta property="og:site_name" content="Boda de Jesús & Litzy" />
+    <meta property="og:image" content="%PUBLIC_URL%/images/og-boda.jpg" />
+    <meta property="og:image:alt" content="Jesús y Litzy - Invitación de boda" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Boda de Jesús Carmona y Litzy Arcos" />
+    <meta name="twitter:description" content="Fecha, sede, mesa de regalos y RSVP del evento." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/images/og-boda.jpg" />
+
+    <!-- PWA / iOS -->
+    <meta name="apple-mobile-web-app-title" content="Boda J&L" />
+    <meta name="application-name" content="Boda J&L" />
+
+    <!-- Preloads / performance (opcional: coloca tus fuentes en /public/fonts) -->
+    <!-- <link rel="preload" href="%PUBLIC_URL%/fonts/NombreFuente.woff2" as="font" type="font/woff2" crossorigin> -->
+
+    <!-- Bootstrap 5 (opcional) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Datos estructurados: Wedding (ajusta fecha/ubicación) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Wedding",
+      "name": "Boda de Jesús Carmona y Litzy Arcos",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-02-14T17:00:00-06:00",
+      "endDate": "2026-02-14T23:59:00-06:00",
+      "location": {
+        "@type": "Place",
+        "name": "Salón / Jardín (ajusta aquí)",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dirección del lugar",
+          "addressLocality": "Ciudad",
+          "addressRegion": "Estado",
+          "postalCode": "CP",
+          "addressCountry": "MX"
+        }
+      },
+      "image": ["%PUBLIC_URL%/images/og-boda.jpg"],
+      "description": "Toda la información oficial para asistir a la boda de Jesús Carmona y Litzy Arcos.",
+      "organizer": {
+        "@type": "Person",
+        "name": "Jesús Carmona"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Litzy Arcos"
+      }
+    }
+    </script>
+
+    <!-- Analytics (opcional) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXX");
+    </script> -->
+
+    <!-- Estilos mínimos (opcional) -->
+    <style>
+      :root {
+        --brand-primary: #8e5aa6; /* lila elegante */
+        --brand-secondary: #f7e8ff; /* fondo suave */
+        --text-color: #1f1f1f;
+      }
+      body {
+        background: var(--brand-secondary);
+        color: var(--text-color);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .brand-gradient {
+        background: linear-gradient(135deg, #8e5aa6, #c7a0d6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+    </style>
   </head>
+
   <body class="body">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <a class="sr-only" href="#root">Saltar al contenido principal</a>
+    <noscript>Necesitas habilitar JavaScript para usar este sitio.</noscript>
+
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      React montará tu app aquí. Mantén este contenedor.
+      Inserta tus secciones (Hero, Cuenta Regresiva, Ubicación, RSVP, Mesa de Regalos, Preguntas Frecuentes, etc.) desde React.
     -->
+    <div id="root"></div>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

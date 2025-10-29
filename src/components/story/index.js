@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import strory1 from '../../images/story/1.jpg'
+import historiaVideo from '../../images/fotosPaginaBoda/videoMometnos1.mp4';
 import strory2 from '../../images/story/2.jpg'
 import strory3 from '../../images/story/3.jpg'
 import strory4 from '../../images/story/4.jpg'
@@ -29,16 +29,22 @@ const Story = () =>{
                                         <div className="image-wrap">
                                             <div className="single-image">
                                                 <div>
-                                                    <img src={strory1} alt=""/>
+                                                    {/* Reemplazado img por iframe para video */}
+                                                    <div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
+                                                        <iframe
+                                                            src={historiaVideo}
+                                                            title="Video - Nuestra Historia"
+                                                            style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0}}
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                                            allowFullScreen
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <h2>First time we met</h2>
                                         <span className="date">July 20, 2017</span>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some,</p>
-                                        <div className="story-button">
-                                            <Link className="theme-btn" to="/"  title="READ MORE">READ MORE</Link>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">

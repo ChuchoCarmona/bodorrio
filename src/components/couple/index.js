@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Sectiontitle from "../section-title";
-import couple1 from "../../images/couple/img-1.jpg";
-import couple2 from "../../images/couple/img-2.jpg";
+import couple1 from "../../images/fotosPaginaBoda/perfilLitzy.jpg";
+import couple2 from "../../images/fotosPaginaBoda/pefilJesus.jpg";
 import couple3 from "../../images/couple/2.png";
 import "./style.css";
 
@@ -32,7 +32,7 @@ const Couple = () => {
                       </p>
                     </div>
 
-                    <div className="social-icon">
+                    {/* <div className="social-icon">
                       <ul className="d-flex">
                         <li>
                           <Link to="/">
@@ -55,7 +55,7 @@ const Couple = () => {
                           </Link>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const Couple = () => {
                         bendiciones.
                       </p>
                     </div>
-
+{/* 
                     <div className="social-icon">
                       <ul className="d-flex">
                         <li>
@@ -105,7 +105,7 @@ const Couple = () => {
                           </Link>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
