@@ -23,11 +23,11 @@ const Homepage4 = () => {
            <Couple/>
            <Welcome/>
            <Story/>
-           <People/>
+           {/* <People/> */}
            <Location/>
            <Gallery/>
            <Rsvp/>
-           <Gift/>
+           {/* <Gift/> */}
        </div>
     )
 }
