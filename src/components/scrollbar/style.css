@@ -1,22 +1,45 @@
 ul.smothscroll {
-    position: fixed;
-    bottom: 15px;
-    right:30px;
-    list-style: none;
-    z-index: 999;
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  list-style: none;
+  z-index: 999;
 }
 ul.smothscroll a {
-    width: 50px;
-    height: 50px;
-    background:rgba(30,130,103,.6);
-    color: #fff;
-    display: block;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 47px;
-    border:1px solid rgba(30,130,103);
-    transition: all .3s;
+  width: 50px;
+  height: 50px;
+  background: rgba(30, 130, 103, 0.6);
+  color: #fff;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 47px;
+  border: 1px solid rgba(30, 130, 103);
+  transition: all 0.3s;
 }
-ul.smothscroll a:hover{
-    background:rgba(30,130,103);
+ul.smothscroll a:hover {
+  background: rgba(30, 130, 103);
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #198754; /* verde Material o Bootstrap */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  background-color: #157347; /* tono más oscuro al pasar el mouse */
+  transform: translateY(-3px);
 }

@@ -1,19 +1,34 @@
-import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import './style.css'
+// Scrollbar.jsx
+import React, { useState, useEffect } from "react";
+import "./style.css";
 
 const Scrollbar = () => {
+  const [visible, setVisible] = useState(false);
 
-    return(
-        <div className="col-lg-12">
-            <div className="header-menu">
-                <ul className="smothscroll">
-                    <li><AnchorLink href='#home'><i className="fa fa-arrow-up"></i></AnchorLink></li>
-                </ul>
-            </div>
-        </div>
-        
+  // Mostrar el botón solo cuando el usuario baja cierta cantidad
+  useEffect(() => {
+    const toggleVisible = () => {
+      if (window.scrollY > 300) setVisible(true);
+      else setVisible(false);
+    };
+    window.addEventListener("scroll", toggleVisible);
+    return () => window.removeEventListener("scroll", toggleVisible);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    visible && (
+      <div className="scroll-to-top" onClick={scrollToTop}>
+        <i className="fa fa-arrow-up"></i>
+      </div>
     )
-}
+  );
+};
 
 export default Scrollbar;

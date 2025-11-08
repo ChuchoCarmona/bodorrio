@@ -4,13 +4,13 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import './style.css'
-
-import galimg1 from '../../images/gal/1.jpg'
-import galimg2 from '../../images/gal/6.jpg'
-import galimg3 from '../../images/gal/3.jpg'
-import galimg4 from '../../images/gal/4.jpg'
-import galimg5 from '../../images/gal/5.jpg'
-import galimg6 from '../../images/gal/2.jpg'
+// v, h, v, h, h, v
+import galimg1 from '../../images/fotosPaginaBoda/galeria/v1.jpg'
+import galimg2 from '../../images/fotosPaginaBoda/galeria/h1.jpg'
+import galimg3 from '../../images/fotosPaginaBoda/galeria/v2.jpg'
+import galimg4 from '../../images/fotosPaginaBoda/galeria/h2.jpg'
+import galimg5 from '../../images/fotosPaginaBoda/galeria/h3.jpg'
+import galimg6 from '../../images/fotosPaginaBoda/galeria/v3.jpg'
 
 const Portfolios = [
   {
@@ -39,7 +39,7 @@ const Gallery = (props) => {
 
   return (
     <div id="gallery" className="Gallery-section section-padding pb-70">
-      <Sectiontitle section={'Our Gellary'} />
+      <Sectiontitle section={'Nuestra galeria'} />
       <div className="container">
         <div className="row">
           <ResponsiveMasonry columnsCountBreakPoints={{ 575: 1, 750: 3, 900: 3 }}>

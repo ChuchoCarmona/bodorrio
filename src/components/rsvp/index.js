@@ -1,140 +1,250 @@
-import React, { Component } from 'react';
-import './style.css'
+// RSVPWhatsAppMX.jsx
+import React, { useState } from "react";
+import {
+  Box,
+  Grid,
+  Typography,
+  TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Button,
+  Paper,
+  Snackbar,
+  Alert,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  FormHelperText,
+} from "@mui/material";
+import "./style.css"; // opcional: conserva tu fondo/identidad visual
 
-class Rsvp extends Component {
+// Teléfono de destino (WA en MX: 52 + 10 dígitos, sin +, espacios ni guiones)
+const PHONE = "5217443778058";
 
-    state = {
-        name: '',
-        email: '',
-        rsvp: '',
-        events: '',
-        notes: '',
-        error: {}
+const RSVPWhatsAppMX = () => {
+  const [form, setForm] = useState({
+    nombre: "",
+    asistencia: "", // "si" | "no"
+    personas: "", // "1".."6" (solo si asistencia = "si")
+    mensaje: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [toast, setToast] = useState({
+    open: false,
+    msg: "",
+    severity: "success",
+  });
+
+  const change = (e) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+    setErrors((er) => ({ ...er, [name]: "" }));
+  };
+
+  const validate = () => {
+    const er = {};
+    if (!form.nombre.trim()) er.nombre = "Escribe tu nombre";
+    if (!form.asistencia) er.asistencia = "Indica si asistirás";
+    if (form.asistencia === "si" && !form.personas)
+      er.personas = "Selecciona cuántas personas asistirán";
+    setErrors(er);
+    return Object.keys(er).length === 0;
+  };
+
+  const buildMessage = () => {
+    const asistir = form.asistencia === "si";
+    const partes = [
+      `Hola, soy ${form.nombre}.`,
+      asistir ? "Confirmo que SÍ asistiré." : "Confirmo que NO podré asistir.",
+      asistir && form.personas
+        ? `Asistiremos ${form.personas} ${
+            Number(form.personas) === 1 ? "persona" : "personas"
+          } (incluyéndome).`
+        : "",
+      form.mensaje?.trim() ? `Mensaje: ${form.mensaje.trim()}` : "",
+      asistir ? "¡Gracias! Nos vemos" : "¡Gracias por la invitación!",
+    ].filter(Boolean);
+    return partes.join(" ");
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) {
+      setToast({
+        open: true,
+        msg: "Revisa los campos marcados",
+        severity: "error",
+      });
+      return;
     }
+    const text = encodeURIComponent(buildMessage());
+    window.open(
+      `https://wa.me/${PHONE}?text=${text}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
+  return (
+    <div id="rsvp" className="rsvp-area go-rsvp-area section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <Paper
+              elevation={3}
+              className="rsvp-wrap"
+              sx={{
+                p: { xs: 3, md: 4 },
+                borderRadius: 3,
+                background: "rgba(255,255,255,0.9)",
+                backdropFilter: "blur(3px)",
+              }}
+            >
+              <div className="section-title section-title4 text-center">
+                <Typography
+                  variant="h2"
+                  component="h2"
+                  sx={{
+                    fontFamily: "'Great Vibes','Cormorant Garamond',serif",
+                    fontWeight: 500,
+                    fontSize: { xs: "2.2rem", md: "3rem" },
+                    mb: 1,
+                  }}
+                >
+                  Confirmación de Asistencia
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  sx={{ mb: 3 }}
+                >
+                  Cuéntanos si asistirás y cuántas personas te acompañarán.
+                </Typography>
+              </div>
 
-    changeHandler = (e) => {
-        const error = this.state.error;
-        error[e.target.name] = ''
+              <Box component="form" noValidate onSubmit={onSubmit}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Tu nombre*"
+                      name="nombre"
+                      value={form.nombre}
+                      onChange={change}
+                      error={!!errors.nombre}
+                      helperText={errors.nombre}
+                    />
+                  </Grid>
 
-        this.setState({
-            [e.target.name]: e.target.value,
-            error
-        })
-    }
+                  <Grid item xs={12}>
+                    <FormControl
+                      component="fieldset"
+                      error={!!errors.asistencia}
+                      sx={{ width: "100%" }}
+                    >
+                      <Typography sx={{ mb: 1 }}>¿Asistirás?*</Typography>
+                      <RadioGroup
+                        row
+                        name="asistencia"
+                        value={form.asistencia}
+                        onChange={change}
+                      >
+                        <FormControlLabel
+                          value="si"
+                          control={<Radio />}
+                          label="Sí"
+                        />
+                        <FormControlLabel
+                          value="no"
+                          control={<Radio />}
+                          label="No"
+                        />
+                      </RadioGroup>
+                      {!!errors.asistencia && (
+                        <FormHelperText>{errors.asistencia}</FormHelperText>
+                      )}
+                    </FormControl>
+                  </Grid>
 
-    subimtHandler = (e) => {
-        e.preventDefault();
+                  {form.asistencia === "si" && (
+                    <Grid item xs={12} sm={6}>
+                      <FormControl fullWidth error={!!errors.personas}>
+                        <InputLabel id="personas-label">
+                          ¿Cuántas personas?*
+                        </InputLabel>
+                        <Select
+                          labelId="personas-label"
+                          label="¿Cuántas personas?*"
+                          name="personas"
+                          value={form.personas}
+                          onChange={change}
+                        >
+                          {[1, 2, 3, 4, 5, 6].map((n) => (
+                            <MenuItem key={n} value={String(n)}>
+                              {n}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        {!!errors.personas && (
+                          <FormHelperText>{errors.personas}</FormHelperText>
+                        )}
+                      </FormControl>
+                    </Grid>
+                  )}
 
-        const { name,
-            email,
-            rsvp,
-            events,
-            notes, error } = this.state;
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Mensaje adicional (opcional)"
+                      name="mensaje"
+                      value={form.mensaje}
+                      onChange={change}
+                      multiline
+                      minRows={3}
+                    />
+                  </Grid>
 
-        if (name === '') {
-            error.name = "Please enter your name";
-        }
-        if (email === '') {
-            error.email = "Please enter your email";
-        }
-        if (rsvp === '') {
-            error.rsvp = "Select your number of rsvp";
-        }
-        if (events === '') {
-            error.events = "Select your event list";
-        }
-        if (notes === '') {
-            error.notes = "Please enter your note";
-        }
+                  <Grid item xs={12} textAlign="center" sx={{ mt: 1 }}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      className="submit"
+                      sx={{
+                        px: 4,
+                        py: 1.2,
+                        borderRadius: 999,
+                        textTransform: "none",
+                      }}
+                    >
+                      Enviar confirmación por WhatsApp
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Paper>
+          </div>
+        </div>
+      </div>
 
+      <Snackbar
+        open={toast.open}
+        autoHideDuration={3000}
+        onClose={() => setToast((t) => ({ ...t, open: false }))}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          severity={toast.severity}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {toast.msg}
+        </Alert>
+      </Snackbar>
+    </div>
+  );
+};
 
-        if (error) {
-            this.setState({
-                error
-            })
-        }
-        if (error.name === '' && error.email === '' && error.email === '' && error.rsvp === '' && error.events === '' && error.notes === '') {
-            this.setState({
-                name: '',
-                email: '',
-                rsvp: '',
-                events: '',
-                notes: '',
-                error: {}
-            })
-        }
-
-        console.log(this.state);
-        console.log(this.state.error.notes);
-    }
-
-    render() {
-
-        const { name,
-            email,
-            rsvp,
-            events,
-            notes, error } = this.state;
-        return (
-            <div id="rsvp" className="rsvp-area go-rsvp-area section-padding">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                            <div className="rsvp-wrap">
-                                <div className="col-12">
-                                    <div className="section-title section-title4 text-center">
-                                        <h2>Be Our Guest</h2>
-                                        <p>Please reserve before December 15th, 2018.</p>
-                                    </div>
-                                </div>
-                                <form onSubmit={this.subimtHandler}>
-                                    <div className="contact-form form-style">
-                                        <div className="row">
-                                            <div className="col-12 col-sm-6">
-                                                <input type="text" value={name} onChange={this.changeHandler} placeholder="Your Name*" id="fname" name="name" />
-                                                <p>{error.name ? error.name : ''}</p>
-                                            </div>
-                                            <div className="col-12  col-sm-6">
-                                                <input type="text" placeholder="Your Email*" onChange={this.changeHandler} value={email} id="email" name="email" />
-                                                <p>{error.email ? error.email : ''}</p>
-                                            </div>
-                                            <div className="col col-sm-6 col-12">
-                                                <select className="form-control" onChange={this.changeHandler} value={rsvp} name="rsvp">
-                                                    <option disabled value="">Number Of rsvp*</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                </select>
-                                                <p>{error.rsvp ? error.rsvp : ''}</p>
-                                            </div>
-                                            <div className="col col-sm-6 col-12">
-                                                <select className="form-control" onChange={this.changeHandler} value={events} name="events">
-                                                    <option disabled value="">I Am Attending*</option>
-                                                    <option value="1">Al events</option>
-                                                    <option value="2">Wedding ceremony</option>
-                                                    <option value="3">Reception party</option>
-                                                </select>
-                                                <p>{error.events ? error.events : ''}</p>
-                                            </div>
-                                            <div className="col-12 col-sm-12">
-                                                <textarea className="contact-textarea" value={notes} onChange={this.changeHandler} placeholder="Message" name="notes"></textarea>
-                                                <p>{error.notes ? error.notes : ''}</p>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 text-center">
-                                            <button id="submit" type="submit" className="submit">Send Invitation</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-}
-
-export default Rsvp;
+export default RSVPWhatsAppMX;

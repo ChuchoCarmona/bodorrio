@@ -1,65 +1,77 @@
-import React, { Component } from 'react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { Collapse, CardBody, Card } from 'reactstrap';
-import {Link} from 'react-router-dom'
+// MobileMenuES.jsx
+import React, { Component } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-export default class MobileMenu extends Component {
+export default class MobileMenuES extends Component {
+  state = {
+    isMenuShow: false,
+  };
 
-    state = {
-        isMenuShow: false,
-        isOpen: false,
-    }
+  // Abre/cierra el menú
+  toggleMenu = () => {
+    this.setState((s) => ({ isMenuShow: !s.isMenuShow }));
+  };
 
-    menuHandler = () => {
-        this.setState({
-            isMenuShow: !this.state.isMenuShow
-        })
-    }
+  // Cierra el menú (al hacer clic en una opción)
+  closeMenu = () => {
+    this.setState({ isMenuShow: false });
+  };
 
-    setIsOpen = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    }
+  render() {
+    const { isMenuShow } = this.state;
 
-    render() {
+    return (
+      <div>
+        <div className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
+          <div className="close" onClick={this.toggleMenu}>
+            <i className="fa fa-close"></i>
+          </div>
 
-        const { isMenuShow, isOpen } = this.state;
+          <div className="logo2">
+            {/* Puedes mantener el Link a / si tu home está ahí */}
+            <h2>
+              <Link to="/" onClick={this.closeMenu}>
+                Litzy &amp; Jesús
+              </Link>
+            </h2>
+          </div>
 
-        return (
-            <div>
-                <div className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
-                    <div className="close" onClick={this.menuHandler}><i className='fa fa-close'></i></div>
-                    <div className="logo2">
-                        <h2><Link to='/home'>Harry & Nancy</Link></h2>
-                    </div>
-                    <ul className="responsivemenu">
-                        <li><Link onClick={this.setIsOpen} to='/'>Home<i className="fa fa-angle-right" aria-hidden="true"></i></Link></li>
-                        <Collapse isOpen={isOpen}>
-                            <Card>
-                                <CardBody>
-                                    <li><Link to='/'>Home Style 1</Link></li>
-                                    <li><Link to='/home2'>Home Style 2</Link></li>
-                                    <li><Link to='/home3'>Home Style 3</Link></li>
-                                    <li><Link to='/home4'>Home Style 4</Link></li>
-                                </CardBody>
-                            </Card>
-                        </Collapse>
-                        <li><AnchorLink href='#couple'>Couple</AnchorLink></li>
-                        <li><AnchorLink href='#story'>Story</AnchorLink></li>
-                        <li><AnchorLink href='#people'>People</AnchorLink></li>
-                        <li><AnchorLink href='#event'>Events</AnchorLink></li>
-                        <li><AnchorLink href='#gallery'>Gallery</AnchorLink></li>
-                        <li><AnchorLink  href='#rsvp'>Rsvp</AnchorLink></li>
-                        <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/Blog-details'>Blog Details</Link></li>
-                    </ul>
-                    
-                </div>
+          <ul className="responsivemenu">
+            <li>
+              <AnchorLink href="#couple" onClick={this.closeMenu}>
+                Pareja
+              </AnchorLink>
+            </li>
+            <li>
+              <AnchorLink href="#story" onClick={this.closeMenu}>
+                Historia
+              </AnchorLink>
+            </li>
+            <li>
+              <AnchorLink href="#event" onClick={this.closeMenu}>
+                Evento
+              </AnchorLink>
+            </li>
+            <li>
+              <AnchorLink href="#gallery" onClick={this.closeMenu}>
+                Galería
+              </AnchorLink>
+            </li>
+            <li>
+              <AnchorLink href="#rsvp" onClick={this.closeMenu}>
+                Confirmación
+              </AnchorLink>
+            </li>
+          </ul>
+        </div>
 
-                <div className="showmenu" onClick={this.menuHandler}><i className="fa fa-bars" aria-hidden="true"></i></div>         
-            </div>
-        )
-    }
+        {/* Botón hamburguesa para mostrar/ocultar el menú */}
+        <div className="showmenu" onClick={this.toggleMenu}>
+          <i className="fa fa-bars" aria-hidden="true"></i>
+        </div>
+      </div>
+    );
+  }
 }

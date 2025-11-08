@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import { Dialog, Grid } from "@mui/material";
 
-const LocationMap = ({ maxWidth, button, buttonClass }) => {
+const LocationMap2 = ({ maxWidth, button, buttonClass }) => {
   const [open, setOpen] = React.useState(false);
 
   function handleClickOpen() {
@@ -17,7 +17,7 @@ const LocationMap = ({ maxWidth, button, buttonClass }) => {
     <Fragment>
       <button className={`btn ${buttonClass}`} onClick={handleClickOpen}>
         {button}
-        Iglesia
+        Salon
       </button>
       <Dialog
         open={open}
@@ -32,7 +32,7 @@ const LocationMap = ({ maxWidth, button, buttonClass }) => {
           <Grid className="modalBody modal-body">
             <iframe
               title="map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d476.68431252084685!2d-99.71485543995894!3d17.09833847049856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cbb300512e68cb%3A0x3fa204f0ddcfce90!2sIglesia%20San%20Isidro%20Labrador!5e0!3m2!1ses-419!2smx!4v1762576169540!5m2!1ses-419!2smx"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d674.1515098487909!2d-99.72281528164054!3d17.093339490697936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cbb3d6abbe2239%3A0x9f3d7bb4afae0755!2sFRAGA!5e0!3m2!1ses-419!2smx!4v1757124205999!5m2!1ses-419!2smx"
             ></iframe>
           </Grid>
         </Grid>
@@ -40,4 +40,4 @@ const LocationMap = ({ maxWidth, button, buttonClass }) => {
     </Fragment>
   );
 };
-export default LocationMap;
+export default LocationMap2;

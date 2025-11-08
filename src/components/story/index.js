@@ -152,7 +152,9 @@ const Story = () => {
 
                     <Collapse in={openHistoria}>
                       <p style={{ marginTop: "1rem" }}>
-                        Nos conocimos un 22 de noviembre y desde ese instante
+                        Nos conocimos en un mes de agosto pero nuestros corazones se
+                        unieron un 22 de noviembre, despues de casi tres año de haber cruzado miradas
+                        por primera vez y desde ese instante
                         sentimos que Dios había puesto algo especial en nuestro
                         camino. Empezamos a compartir momentos que jamás
                         imaginamos vivir, llenos de risas, complicidad y sueños

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import LocationMap from "../LocationModal/LocationModal";
+import LocationMap2 from "../LocationModal/LocationModal2";
 
 const Welcome = () => {
   return (
@@ -19,7 +20,7 @@ const Welcome = () => {
                 de esta hermosa historia juntos.
               </p>
               <div className="btn">
-                <Link to="/home">RSVP</Link>
+                <LocationMap2 buttonClass={"location-btn"} />
               </div>
               <LocationMap buttonClass={"location-btn"} />
             </div>
