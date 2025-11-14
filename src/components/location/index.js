@@ -67,11 +67,14 @@ const Location = () => {
                 </span>
                 <p>
                   Al concluir la misa en la Parroquia de San Isidro Labrador,
-                  nos dirigiremos juntos al <strong>Salón Fraga</strong> para
-                  continuar la celebración. El trayecto es corto (aprox.
-                  1.4&nbsp;km, 3&nbsp;min en auto), así que te invitamos a
-                  seguir la caravana. ¡La música, el
-                  brindis y la pista de baile nos esperan!
+                  nos dirigiremos juntos al{" "}
+                  <strong>hogar de la madre del novio</strong>, donde los padres
+                  de ambos novios les ofrecerán una emotiva bendición familiar
+                  antes de continuar con la celebración. Posteriormente,
+                  seguiremos en caravana hacia el
+                  <strong>Salón Fraga</strong>. El recorrido es corto (aprox.
+                  1.4&nbsp;km, 3&nbsp;min en auto). ¡La música, el brindis y la
+                  pista de baile nos esperan!
                 </p>
 
                 <LocationMap3 buttonClass={"location-btn"} />

@@ -10,33 +10,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#8e5aa6" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="description" content="Acompáñanos a celebrar la boda de Jesús Carmona y Litzy Arcos. Toda la información del evento: fecha, ubicación, mesa de regalos, dress code, confirmación de asistencia (RSVP) y más." />
-    <meta name="keywords" content="boda, Jesús Carmona, Litzy Arcos, invitación, rsvp, mesa de regalos, evento, ceremonia, recepción" />
+    <meta
+      name="description"
+      content="Acompáñanos a celebrar la boda de Jesús Carmona y Litzy Arcos. Toda la información del evento: fecha, ubicación, mesa de regalos, dress code, confirmación de asistencia (RSVP) y más."
+    />
+    <meta
+      name="keywords"
+      content="boda, Jesús Carmona, Litzy Arcos, invitación, rsvp, mesa de regalos, evento, ceremonia, recepción"
+    />
     <meta name="author" content="Jesús Carmona y Litzy Arcos" />
 
     <!-- Canonical (ajusta tu dominio de producción) -->
-    <link rel="canonical" href="https://tudominio.com/" />
+    <link rel="canonical" href="https://carmonarcos.com/" />
 
     <!-- Favicons (coloca tus archivos en /public) -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Social / Open Graph -->
+    <!-- Open Graph / Social -->
     <meta property="og:locale" content="es_MX" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Boda de Jesús Carmona y Litzy Arcos" />
-    <meta property="og:description" content="Toda la información para acompañarnos en nuestro gran día. ¡Confirma tu asistencia!" />
-    <meta property="og:url" content="https://tudominio.com/" />
+    <meta
+      property="og:description"
+      content="Toda la información para acompañarnos en nuestro gran día. ¡Confirma tu asistencia!"
+    />
+    <meta property="og:url" content="https://carmonarcos.com/" />
     <meta property="og:site_name" content="Boda de Jesús & Litzy" />
-    <meta property="og:image" content="%PUBLIC_URL%/images/og-boda.jpg" />
-    <meta property="og:image:alt" content="Jesús y Litzy - Invitación de boda" />
+
+    <!-- IMPORTANTE: URL ABSOLUTA PARA WHATSAPP -->
+    <meta
+      property="og:image"
+      content="https://carmonarcos.com/images/og-boda.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://carmonarcos.com/images/og-boda.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Jesús y Litzy - Invitación de boda"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Boda de Jesús Carmona y Litzy Arcos" />
-    <meta name="twitter:description" content="Fecha, sede, mesa de regalos y RSVP del evento." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/images/og-boda.jpg" />
+    <meta
+      name="twitter:description"
+      content="Fecha, sede, mesa de regalos y RSVP del evento."
+    />
+    <meta
+      name="twitter:image"
+      content="https://carmonarcos.com/images/og-boda.jpg"
+    />
 
     <!-- PWA / iOS -->
     <meta name="apple-mobile-web-app-title" content="Boda J&L" />
@@ -55,46 +85,48 @@
 
     <!-- Datos estructurados: Wedding (ajusta fecha/ubicación) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Wedding",
-      "name": "Boda de Jesús Carmona y Litzy Arcos",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "startDate": "2026-02-14T17:00:00-06:00",
-      "endDate": "2026-02-14T23:59:00-06:00",
-      "location": {
-        "@type": "Place",
-        "name": "Salón / Jardín (ajusta aquí)",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Dirección del lugar",
-          "addressLocality": "Ciudad",
-          "addressRegion": "Estado",
-          "postalCode": "CP",
-          "addressCountry": "MX"
+      {
+        "@context": "https://schema.org",
+        "@type": "Wedding",
+        "name": "Boda de Jesús Carmona y Litzy Arcos",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "startDate": "2026-02-14T17:00:00-06:00",
+        "endDate": "2026-02-14T23:59:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "Salón / Jardín (ajusta aquí)",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dirección del lugar",
+            "addressLocality": "Ciudad",
+            "addressRegion": "Estado",
+            "postalCode": "CP",
+            "addressCountry": "MX"
+          }
+        },
+        "image": ["https://carmonarcos.com/images/og-boda.jpg"],
+        "description": "Toda la información oficial para asistir a la boda de Jesús Carmona y Litzy Arcos.",
+        "organizer": {
+          "@type": "Person",
+          "name": "Jesús Carmona"
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "Litzy Arcos"
         }
-      },
-      "image": ["%PUBLIC_URL%/images/og-boda.jpg"],
-      "description": "Toda la información oficial para asistir a la boda de Jesús Carmona y Litzy Arcos.",
-      "organizer": {
-        "@type": "Person",
-        "name": "Jesús Carmona"
-      },
-      "performer": {
-        "@type": "Person",
-        "name": "Litzy Arcos"
       }
-    }
     </script>
 
     <!-- Analytics (opcional) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-XXXXXXX");
-    </script> -->
+    </script>
+    -->
 
     <!-- Estilos mínimos (opcional) -->
     <style>
@@ -115,7 +147,16 @@
         background-clip: text;
         color: transparent;
       }
-      .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
     </style>
   </head>
 
