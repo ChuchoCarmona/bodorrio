@@ -63,11 +63,26 @@
   color: #649e93;
   font-weight: 600;
   display: inline-block;
-  max-width: 130px;
-  padding: 0;
-  text-align: left;
+  padding: 10px 18px;
   background: none;
+  border: 2px solid #649e93; /* borde destacado */
+  border-radius: 8px;        /* esquinas suaves */
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
+
+.ceromony-content .location-btn:hover {
+  box-shadow: 0 0 10px rgba(100, 158, 147, 0.6); /* resplandor */
+  transform: scale(1.05);                       /* se agranda */
+  background: none !important;                  /* sin fondo */
+  color: #649e93;                               /* mantiene color */
+}
+
+.ceromony-content .location-btn:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(100, 158, 147, 0.6);
+}
+
 .ceromony-content .btn.location-btn:hover {
   background: none !important;
   color: #649e93;
